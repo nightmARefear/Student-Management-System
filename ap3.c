@@ -1,4 +1,4 @@
-// version 1.4 -- disabled the sorting and added indexes
+// version 1.4 -- disabled the sorting and added indexes (function 9 not working!!!)
 #include <stdio.h>
 #include <stdlib.h>
 #include <errno.h>
@@ -178,7 +178,7 @@ void display_all() // case 2
     while (!feof(fp))
     {
         fread(&S, sizeof(struct Students), 1, fp);
-        if (!feof(fp) && strcmp(S.RegistrationNumber, student_removal) != 0) // displays the students' info properly (https://e-class.teilar.gr/modules/document/index.php?course=CS325&openDir=/514885e6khhf)
+        if (!feof(fp) && strcmp(S.RegistrationNumber, student_removal) != 0) // displays the students' info properly 
         {
             GPA = (S.Physics_I + S.Data_bases_and_files + S.Mathematical_Analysis_II + S.Computer_Architecture_I + S.Programming_II) / 5;
             printf("\n **************************** \n Registration Number: %s \n Last Name: %s \n First Name: %s \n Physics I Mark: %.2f \n Data bases and files Mark: %.2f \n Mathematical Analysis II Mark: %.2f \n Computer Architecture Mark: %.2f \n Programming II Mark: %.2f \n GPA: %.2f \n **************************** \n", S.RegistrationNumber, S.Last_Name, S.First_Name, S.Physics_I, S.Data_bases_and_files, S.Mathematical_Analysis_II, S.Computer_Architecture_I, S.Programming_II, GPA);
