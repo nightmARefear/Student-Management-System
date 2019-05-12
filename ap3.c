@@ -59,7 +59,7 @@ void menu()
     int user_choice;
     do
     {
-        printf("\n Welcome to the menu. Type one number (1-9) to perfom a specific task as shown below: \n");
+        printf("\n Welcome to the menu. Type one number (1-9) to perform a specific task as shown below: \n");
         printf("1. Creation/Expansion \n2. Displays all students (also displaying their GPAs)\n");
         printf("3. Searches for a student \n4. Displays all the students that have passed all their courses \n");
         printf("5. Displays all the students that have failed at data bases \n6. Corrects a student's info \n");
