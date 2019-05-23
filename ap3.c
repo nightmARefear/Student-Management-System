@@ -64,7 +64,7 @@ void menu()
         printf("3. Searches for a student \n4. Displays all the students that have passed all their courses \n");
         printf("5. Displays all the students that have failed at data bases \n6. Corrects a student's info \n");
         printf("7. Removes a student's info \n8. Removes a student's info permanenty\n");
-        printf("9. Sorts all the students based on their GPA in descending order (disabled). \n");
+        printf("9. Sorts all the students based on their Registration Number in descending order (unstable). \n");
         printf("10. Flushes the deleted students.\n99. Exits the program. \n");
         scanf("%d", &user_choice);
     } while ((user_choice < 1 || user_choice > 10) && user_choice != 99);
@@ -105,14 +105,14 @@ void menu()
         break;
 
     case 9:
-        //sort();
-        printf("\n Function disabled! \n");
+        printf("\n Function is unstable! \n");
+        sort();
         break;
     case 10:
         flush_deleted_students(); // my case. empties both files (students.txt, Index.txt) from the deleted students
         break;
     case 99:
-        exit(1);
+        return EXIT_SUCCESS;
         break;
     }
 }
