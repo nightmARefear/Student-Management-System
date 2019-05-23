@@ -582,7 +582,7 @@ void gpa() // function that calculates the gpa of each student
         }
     }
 };
-/*
+
 void sort() // case 9
 {
 
@@ -592,10 +592,8 @@ void sort() // case 9
     {
         printf("\n Creating a new file called: students.txt\n");
         fp = fopen(filename, "wb");
-        exit(1);
+        return EXIT_FAILURE;
     }
-
-    gpa();
 
     struct Students *GPA_student, temp;
 
@@ -612,8 +610,8 @@ void sort() // case 9
     GPA_student = malloc(amountofstudents * sizeof(struct Students));
     if (GPA_student == NULL)
     {
-        printf("\n File too big to transfer to an array. \n");
-        exit(1);
+        printf("\n File too big to transfer to array. \n");
+        return EXIT_FAILURE;
     }
 
     fseek(fp, 0, SEEK_SET);
@@ -628,7 +626,7 @@ void sort() // case 9
         min = i;
         for (j = i + 1; j < amountofstudents; j++)
         {
-            if (GPA_student[j].GPA > GPA_student[min].GPA)
+            if (strcmp(GPA_student[j].RegistrationNumber, GPA_student[min].RegistrationNumber) < -1 )
             {
                 min = j;
             }
@@ -638,13 +636,13 @@ void sort() // case 9
         GPA_student[min] = temp;
     }
 
-    fseek(fp, 0, SEEK_SET); // to be deleted
+    fp = fopen(filename, "w");
     fwrite(&GPA_student[0], sizeof(struct Students), amountofstudents, fp);
 
     printf("\n The sorting function has been successfully completed! \n");
 
     fclose(fp);
-}; */
+}; 
 
 void flush_deleted_students() //case 10
 {
